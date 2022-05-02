@@ -1,0 +1,24 @@
+name: ${name}
+main: ${main}
+
+author: ChiyukiKana
+built-time: ${built}
+
+version: ${version}
+api-version: 1.13
+
+github: https://github.com/ChiyukiKana/${name}
+description: ${description}
+
+softdepend:
+  - MythicMobs
+
+commands:
+  eggoptions:
+    aliases:
+      - eo
+      - egg
+      - eoptions
+permissions:
+  eggoptions.reload:
+    default: op

@@ -1,0 +1,33 @@
+import java.text.SimpleDateFormat
+
+apply plugin: 'java'
+
+tasks.withType(JavaCompile) {
+    options.encoding('UTF-8')
+}
+
+group = 'io.github.chiyukikana.main'
+version = '1.1.3f'
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+}
+
+dependencies {
+    compileOnly 'org.bukkit:bukkit:1.15.2-R0.1-SNAPSHOT'
+    implementation fileTree(dir: 'libs', includes: ['*.jar'])
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        include 'plugin.yml'
+        expand(
+                'name': project.name,
+                'main': project.group + "." + project.name,
+                'built': new SimpleDateFormat('yyyy/MM/dd HH:mm:ss.SSSZ').format(new Date()),
+                'version': project.version,
+                'description': 'Add more options to the Minecraft vanilla eggs.'
+        )
+    }
+}

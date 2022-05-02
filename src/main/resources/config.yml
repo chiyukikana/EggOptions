@@ -1,0 +1,43 @@
+SETTINGS:
+  # 设置类型, 默认为 vanilla
+  # 可选 none, vanilla, mythicmobs
+  type: "vanilla"
+  # 当type为none时的选项
+  none:
+    # 投掷鸡蛋后是否发送声音给玩家
+    playSound: true
+    # 格式: 声音-音量-音调
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP-1-1"
+  # 当type为vanilla时的选项
+  vanilla:
+    # 生成实体
+    entity: chicken
+    # 几率
+    chance: 20.0
+    # 最小生成数量
+    min: 1
+    # 最大生成数量
+    max: 2
+    # 投掷鸡蛋后是否发送声音给玩家
+    playSound: true
+    # 投掷鸡蛋后成功生成实体
+    success: "ENTITY_VILLAGER_YES-1-1"
+    # 投掷鸡蛋后未生成实体
+    failed: "ENTITY_VILLAGER_NO-1-1"
+  # 当type为mythicmobs时的选项
+  mythicmobs:
+    # MM的怪物id, 英文大小写需一致.
+    mmID: 'cooooool'
+    chance: 20.0
+    min: 1
+    max: 2
+    playSound: true
+    success: "BLOCK_ANVIL_DESTROY-1-1"
+    failed: "ENTITY_DRAGON_FIREBALL_EXPLODE-1-1"
+MESSAGES:
+  PREFIXS: '&7[&2Egg&aOptions&7]'
+  reloadconfig: "%p% &f配置文件已重载完成."
+  reloadperms: "%p% &c缺少 &eeggoptions.reload &c权限."
+  valueout: "%p% &c最小最大值超出范围, 允许大小 &e0 - 127 &c."
+  boundmust: "%p% &c最大值&e(max)&c不能大于最小值&e(min)&c."
+  MMnotfound: "%p% &c未安装 MythicMobs 插件, 无法使用本插件部分功能."
